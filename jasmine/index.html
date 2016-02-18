@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Thermostat of awesomeness</title>
-    <link href="css/main.css" rel="stylesheet" media="all">
+    <title>Thermostat</title>
+    <link href="css/stylesheet.css" rel="stylesheet" media="all">
     <script src="src/Thermostat.js"></script>
     <script src="src/jquery.js"></script>
     <script src="src/thermostat_jquery.js"></script>
   </head>
 
+  <header>
+    <h1 id="masterheader">Thermostat</h1>
+    <form id='city-form'>
+      <p><input type="text" name="city" id="city">
+      <input type="submit" value="submit" id="city-submit">
+    </form>
+  </header>
+
   <body>
+    <section id="thermostat">
+      <article id="tempdisplay">
+        <h2 id="temperature"></h2>
+      </article>
 
-    <h2 class="headding" >Thermostat</h2>
-    	<div id="thermostat_body">
-    		<div id="screen">
-    		    <h1 id="temperature"></h1>
-    		</div>
-    		<div id= "buttons">
-    			<ul>
-		        <li><button class="control_button" id="up-arrow" type="submit" value="up">UP!</button></li>
-		        <li><button class="control_button"id="down-arrow" type="submit" value="down">DOWN!</button></li>
-		        <li><button class="control_button" id="reset-temp" type="submit" value="resetTemp">RESET</button></li>
-		        <li><button class="control_button" id="power-saving" type="submit" value="savingOn">Power Saving is On</button></li>
-		       </ul>
-	       </div>
-	     </div>
+      <article id="controls">
+      	<ul>
+          <li><button class="control_button" id="up-arrow" type="submit" value="up">+</button></li>
+          <li><button class="control_button"id="down-arrow" type="submit" value="down">-</button></li>
+          <li><button class="control_button" id="reset-temp" type="submit" value="resetTemp">Reset</button></li>
+        </ul>
+        <button class="control_button" id="power-saving" type="submit" value="savingOn">Power Saving is On</button></li>
+      </article>
+    </section>
 
-       <section>
-         <form id='city-form'>
-           <input type="text" name="city" id='city'>
-           <input type="submit" value="submit" id="city-submit">
-         </form>
-
-         <article id="local-weather"></article>
-
-       </section>
-
+    <section id="weatherdisplay">
+      some stuff....
+      <article id="local-weather"></article>
+    </section>
 
   </body>
 </html>

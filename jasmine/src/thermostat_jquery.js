@@ -3,7 +3,9 @@ $( document ).ready(function() {
 
   function displayTemp() {
     $('#temperature').text(thermostat.temperature);
-    $('#screen').attr('class', thermostat.determineColor());
+    $('#tempdisplay').attr('class', thermostat.determineColor());
+    $('#power-saving').attr('class', thermostat.savingMode);
+
   }
 
   var thermostat = new Thermostat();
@@ -14,17 +16,18 @@ $( document ).ready(function() {
     var city = $('#city').val()
     $.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=b7c5477d0a1d7e7fc8feed92153db903&units=metric",function(result){
       $('#local-weather').text(result.weather[0].description, result.main.temp);
-      // $('#local-weather').text(result.main.temp);
     });
   });
 
   $( "#up-arrow" ).click(function( event ) {
-    thermostat.increaseTemp();
+    try{thermostat.increaseTemp();}
+    catch(err) {}
     displayTemp();
   });
 
   $( "#down-arrow" ).click(function( event ) {
-    thermostat.decreaseTemp();
+    try{thermostat.decreaseTemp();}
+    catch(err) {}
     displayTemp();
   });
 
@@ -32,12 +35,6 @@ $( document ).ready(function() {
     thermostat.resetTemp();
     displayTemp();
   });
-
-  $( "#power-saving" ).click(function( event ) {
-    thermostat.savingModeOff();
-    displayTemp();
-  });
-
 
   function turnPSOn() {
     thermostat.savingModeOn();

@@ -14,7 +14,6 @@ function Thermostat() {
 
 Thermostat.prototype.resetTemp = function(){
   this.temperature = this.DEFAULT_TEMP;
-  this.savingModeOn();
 }
 
 Thermostat.prototype.increaseTemp = function() {

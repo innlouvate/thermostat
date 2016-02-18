@@ -1,0 +1,138 @@
+/** {
+  border: 2px red solid;
+}*/
+
+header {
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#masterheader {
+  color: white;
+  text-align: left;
+  padding-left: 10px;
+  float: left;
+}
+
+#city-form {
+  color: white;
+  font-size: 10px;
+  float: right;
+  padding-top: 30px;
+  padding-right: 20px;
+}
+
+body{
+  background-color: lightgrey;
+  padding-top: 80px;
+}
+
+/*section {
+  display: inline-block;
+}*/
+
+#thermostat {
+  float: left;
+  width: 70%
+}
+
+#tempdisplay {
+  border-width: 8px;
+  border-style: solid;
+  border-radius: 100%;
+  width: 250px;
+  height: 250px;
+  float: right;
+  margin-top: 50px;
+  margin-right: 40px;
+
+}
+
+#temperature {
+  font-size: 90px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.low {
+  border-color: green;
+  color: green;
+}
+.medium {
+  border-color: yellow;
+  color: yellow;
+}
+.high {
+  border-color: red;
+  color: red;
+}
+
+
+#controls {
+  clear: both;
+  float: right;
+  width: 266px;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+  width: 30%;
+  align-content: center;
+}
+
+#power-saving {
+  width: 100%;
+  align-content: center;
+  font-size: 15px;
+  border: none;
+  background: none;
+  outline: 0;
+}
+.true {
+  color: darkgreen;
+}
+.false {
+  color: darkred;
+}
+
+#up-arrow {
+  font-size: 40px;
+  border: none;
+  background: none;
+  outline: 0;
+}
+
+#down-arrow {
+  font-size: 40px;
+  border: none;
+  background: none;
+  outline: 0;
+}
+
+#reset-temp {
+  font-size: 20px;
+  border: none;
+  background: none;
+  outline: 0;
+}
+
+#weatherdisplay {
+  /*clear: both;*/
+  position: fixed;
+  top: 82px;
+  right: 0;
+  background-color: black;
+  height: 100vw;
+  width: 30%;
+  float: right;
+}
