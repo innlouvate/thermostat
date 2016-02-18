@@ -18,14 +18,6 @@ header {
   float: left;
 }
 
-#city-form {
-  color: white;
-  font-size: 10px;
-  float: right;
-  padding-top: 30px;
-  padding-right: 20px;
-}
-
 body{
   background-color: lightgrey;
   padding-top: 80px;
@@ -132,7 +124,24 @@ li {
   top: 82px;
   right: 0;
   background-color: black;
+  opacity: 0.3;
   height: 100vw;
   width: 30%;
   float: right;
+  color: white;
+  z-index: -1;
+}
+
+#city-form {
+  color: white;
+  font-size: 10px;
+  padding-top: 30px;
+  padding-left: 20px;
+  z-index: 1;
+}
+
+#local-weather {
+  clear: both;
+  padding: 20px;
+
 }

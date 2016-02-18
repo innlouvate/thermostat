@@ -11,14 +11,6 @@ $( document ).ready(function() {
   var thermostat = new Thermostat();
   displayTemp();
 
-  $('#city-submit').click(function(event) {
-    event.preventDefault();
-    var city = $('#city').val()
-    $.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=b7c5477d0a1d7e7fc8feed92153db903&units=metric",function(result){
-      $('#local-weather').text(result.weather[0].description, result.main.temp);
-    });
-  });
-
   $( "#up-arrow" ).click(function( event ) {
     try{thermostat.increaseTemp();}
     catch(err) {}
