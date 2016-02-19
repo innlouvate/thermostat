@@ -13,23 +13,18 @@ var cityLng;
 
         cityLat = result.coord.lat;
         cityLng = result.coord.lon;
-        var icon = result.weather[0].icon;
-        iconsrc = "http://openweathermap.org/img/w/"+icon+".png";
+        var iconid = result.weather[0].icon;
+        iconsrc = "http://openweathermap.org/img/w/"+iconid+".png";
+        $('#icon').css("background-image", "url("+iconsrc+")")
+
         initMap(cityLat,cityLng);
-        // $('icon').attr('src', iconsrc)
-        var background = backgroundPhoto(cityLat,cityLng);
-        console.log(background);
-        $('#icon').css("background-image", "url("+background+")")
-        // $('photo').img(backgroundPhoto(cityLat,cityLng));
-        // $('#weather').text(result.weather[0].main);
+        // backgroundPhoto(cityLat,cityLng);
+
     // });
   });
 
-  // $('#city-submit').one("click", displayOn());
-
   function initMap(cityLat, cityLng) {
   // Create a map object and specify the DOM element for display.
-  // async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN07P65aKk4ZXedv8Uu33H16_W7aWIMEo&callback=initMap"
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: cityLat, lng: cityLng},
       scrollwheel: false,
@@ -37,15 +32,14 @@ var cityLng;
     });
   }
 
-  function backgroundPhoto(cityLat, cityLng) {
-    $get('http://www.panoramio.com/map/get_panoramas.php?set=public&from=0&to=20&minx=' + area.minx + '&miny=' + area.miny + '&maxx=' + area.maxx + '&maxy=' + area.maxy + '&size=original&mapfilter=true', function(result){
-
-    }
-    var myRequest = new panoramio.PhotoRequest({
-      'tag': 'sunset',
-      'rect': {'sw': {'lat': -30, 'lng': 10.5}, 'ne': {'lat': 50.5, 'lng': 30}}
-    });
-  }
+  // function backgroundPhoto(cityLat, cityLng) {
+  //   var url = 'http://www.panoramio.com/map/get_panoramas.php?set=public&from=0&to=20&minx=' + (cityLat-0.1) + '&miny=' + (cityLng-0.1) + '&maxx=' + (cityLat+0.1) + '&maxy=' + (cityLng+0.1) + '&size=original&mapfilter=true'
+  //   console.log(url);
+  //   $get(url, function(result){
+  //     console.log(result);
+  //     $('#photo').css("background-image", "url("+result+")")
+  //   });
+  // }
 
   function displayOn() {
     $('#local-weather').toggle();
